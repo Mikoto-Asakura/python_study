@@ -10,7 +10,7 @@ import tkinter.filedialog as fd
 import PIL.Image
 import PIL.ImageTk
 
-def dispLabel(newImage):
+def dispLabel(newImage): #画像ファイルのラベル変換を関数化
     #読み込んだ画像をラベルに表示
     imageData=PIL.ImageTk.PhotoImage(newImage)
     lbl.configure(image=imageData)
@@ -37,7 +37,7 @@ def openFile():
 def rotatePhoto():
     rpath = txtbox.get() # テキストボックスからファイルパスを取得
     if rpath:
-        newImage= PIL.Image.open(rpath).resize((400,300)).rotate(30)
+        newImage= PIL.Image.open(rpath).resize((200,200)).rotate(30)
         
         #読み込んだ画像をラベルに表示
         #imageData=PIL.ImageTk.PhotoImage(newImage)
@@ -48,7 +48,7 @@ def rotatePhoto():
 def convphoto():
     cpath = txtbox.get()
     if cpath:
-        newImage= PIL.Image.open(cpath).resize((100,100)).convert("L")
+        newImage= PIL.Image.open(cpath).resize((200,200)).convert("L")
         
         #imageData=PIL.ImageTk.PhotoImage(newImage)
         #lbl.configure(image=imageData)
